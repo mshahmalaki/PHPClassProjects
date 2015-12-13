@@ -1,0 +1,114 @@
+PSR-0 --> PHP Standard Recommendation
+PSR-4
+
+#tip1.php
+<?php
+	echo('<pre>');
+	$a = 2;
+	$b = 'a';
+	echo($a);			// 2
+	echo("\r\n");		// Return Character
+	echo($b);			// a
+	echo("\r\n");		// Return Character
+	echo($$b);			// 2
+	echo('</pre>');
+?>
+
+#echo.php
+<?php
+	$age = 24;
+	echo('I am ');
+	echo($age);
+
+	// OR
+
+	echo("I am {$age}");
+
+	// OR
+
+	$b ="I am {$age}";
+	echo($b);
+?>
+
+"I 've been there"
+'I \'ve been there'
+
+\' --> Escape Cotation Character
+\\ --> Escape Backslash Character
+
+\r
+\n
+\r\n
+\t
+
+Variabes
+CONSTANTs --> define(Constant Name, Constant Value);
+						|--> String			|--> Scalar
+Example:
+	define('MATH_PI', 3.1415);
+	$radius = 4;
+	$surface = MATH_PI * ($radius * $radius);
+
+Use Cases of CONSTANT:
+	Define DB Connection Parameters
+
+Variables & CONSTANTs Documentation:
+	/** @var int */
+
+Define CONSTANTs in WordPress because of Security Context:
+	#public.php
+	<?php
+		define('AUTH', true);
+		echo('Welcome');
+
+
+	#private.php
+	<?php
+		if(!defined('AUTH')) {
+			die('Access Denied');
+		}
+
+defined(Constant Name AS String); --> with ' ' OR " "
+
+** for Study:
+	constant();
+	Magical Constant
+	Predefined or Reserved Constant	
+
+** for Home Work:
+	Create config.php file for EShop Web Application:
+		define('BASE_URL','http://shop.loc:8080');
+
+		OR
+
+		define('BASE_URL','http://localhost:8080/shop');
+		define('DB_HOST','localhost');
+		define('DB_USER','root');
+		define('DB_PASS','');
+		define('DB_DB','shop');
+	Write XOX Game
+	Write Check Intercalary Year Program
+dirname(Path AS String);
+
+Operators:
+	=		+		.		==	--> Set Same Type & Check Value			&&  	AND
+			-				!=											||		OR
+			*				<											!		NOT
+			/				>
+			%				<=
+							>=
+							=== --> Check Type & then Check Value
+							!==
+
+$k = __ ? __ : __ --> Ternary Opreator
+
+$j = __ ?? __	 --> Null Coalesce Operator
+
+OR
+
+$j = !is_null __ ? __ : __
+
+$a = $a + $b;				OR 			$a += $b;
+$a = $a + $b * $c;			OR 			$a += $b * $c;
+$a++;
+$a--;

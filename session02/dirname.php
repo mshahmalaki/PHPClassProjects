@@ -1,0 +1,13 @@
+<?php  
+	echo(__FILE__);
+	echo('<br>');
+	echo(__DIR__);
+	echo('<br>');
+	echo(dirname(__FILE__));
+	echo('<br>');
+	echo(dirname(dirname(__FILE__)));
+	echo('<br>');
+	echo(dirname(dirname(dirname(__FILE__))));
+	echo('<br>');
+	echo(dirname(dirname(dirname(dirname(__FILE__)))));
+	echo('<br>');

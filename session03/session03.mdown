@@ -1,0 +1,194 @@
+A string literal can be specified in four different ways:
+
+    single quoted
+    double quoted
+    heredoc syntax
+    nowdoc syntax (since PHP 5.3.0)
+
+String Functions:
+
+	strlen
+		strlen — Get string length
+		int strlen ( string $string )
+		Returns the length of the given string. 
+
+
+	strpos
+		strpos — Find the position of the first occurrence of a substring in a string
+		mixed strpos ( string $haystack , mixed $needle [, int $offset = 0 ] )
+		Find the numeric position of the first occurrence of needle in the haystack string. 
+
+
+	substr
+		substr — Return part of a string
+		string substr ( string $string , int $start [, int $length ] )
+		Returns the portion of string specified by the start and length parameters.
+
+
+	trim 
+		trim — Strip whitespace (or other characters) from the beginning and end of a string
+		string trim ( string $str [, string $character_mask = " \t\n\r\0\x0B" ] )
+
+
+	str_replace 
+		str_replace — Replace all occurrences of the search string with the replacement string
+		mixed str_replace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+
+
+	str_ireplace 
+		str_ireplace — Case-insensitive version of str_replace().
+		mixed str_ireplace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+
+
+	XSS Attack --> User's (Client) Cookies Hijacking
+
+	by Value vs. by Reference --> Passing by Reference (Pointer) --> $var2 = &$var1
+
+	array_shift 
+		array_shift — Shift an element off the beginning of array
+		mixed array_shift ( array &$array )
+
+
+	htmlentities
+		htmlentities — Convert all applicable characters to HTML entities
+		string htmlentities ( string $string [, int $flags = ENT_COMPAT | ENT_HTML401 [, string $encoding = ini_get("default_charset") [, bool $double_encode = true ]]] )
+
+
+	htmlspecialchars 
+		htmlspecialchars — Convert special characters to HTML entities
+		string htmlspecialchars ( string $string [, int $flags = ENT_COMPAT | ENT_HTML401 [, string $encoding = ini_get("default_charset") [, bool $double_encode = true ]]] )
+
+
+Arrays:
+
+	$k = array(1, 2, 3, "salam", true, null);
+
+	OR
+
+	$k = [1, 2, 3, "salam", true, null];
+
+	$r = [];
+
+	Add Array Element:
+
+	$k[] = false;
+
+	var_dump(isset($k)); 		--> bool(true)
+	var_dump(isset($k[26])); 	--> bool(false)
+
+	unset($k[3]);				--> 1, 2, 3, true, null
+
+	Associated Arrays:
+		$data = [
+			'name' => 'Reza',
+			'age' => '12',
+			'unemployed' => false
+		];
+
+	array_values
+		array_values — Return all the values of an array
+		array array_values ( array $array )
+		array_values() returns all the values from the array and indexes the array numerically. 
+
+		array_values Example:
+		<?php
+			$array = array("size" => "XL", "color" => "gold");
+			print_r(array_values($array));
+		?>
+
+		result:
+		Array
+		(
+		    [0] => XL
+		    [1] => gold
+		)
+
+	array_keys 
+		array_keys — Return all the keys or a subset of the keys of an array
+		array_keys() returns the keys, numeric and string, from the array. 
+
+		If the optional search_value is specified, then only the keys for that value are returned. Otherwise, all the keys from the array are returned. 
+
+	sizeof();
+
+	count();
+
+	Other Important Array Functions:
+		array_combine
+		array_merge 
+		array_search 
+		array_sum 
+
+Loops:
+	
+	for
+		for loops are the most complex loops in PHP. They behave like their C counterparts. The syntax of a for loop is: 
+
+		for (expr1; expr2; expr3)
+	    	statement
+
+		The first expression (expr1) is evaluated (executed) once unconditionally at the beginning of the loop. 
+		In the beginning of each iteration, expr2 is evaluated. If it evaluates to TRUE, the loop continues and the nested statement(s) are executed. If it evaluates to FALSE, the execution of the loop ends. 
+		At the end of each iteration, expr3 is evaluated (executed). 
+
+	continue;
+	break 2;  --> break & goto 1-level Up in Loops (in Nested loops)
+
+	Continue & Break Example:
+		<?php
+			while (list($key, $value) = each($arr)) {
+			    if (!($key % 2)) { // skip odd members
+			        continue;
+			    }
+			    do_something_odd($value);
+			}
+
+			$i = 0;
+			while ($i++ < 5) {
+			    echo "Outer<br />\n";
+			    while (1) {
+			        echo "Middle<br />\n";
+			        while (1) {
+			            echo "Inner<br />\n";
+			            continue 3;
+			        }
+			        echo "This never gets output.<br />\n";
+			    }
+			    echo "Neither does this.<br />\n";
+			}
+		?> 
+
+	foreach
+		The foreach construct provides an easy way to iterate over arrays. foreach works only on arrays and objects, and will issue an error when you try to use it on a variable with a different data type or an uninitialized variable. There are two syntaxes: 
+
+			foreach (array_expression as $value)
+			    statement
+			foreach (array_expression as $key => $value)
+			    statement
+
+Super Global Arrays:
+	$_GET
+	$_POST
+	$_SERVER
+	$_COOKIE
+	$_SESSION
+	$_FILES
+
+	for Submit Multiple Value Variables:
+		GET Method with Array:
+		http://localhost:8080/class/session03/SGA02.php?a=1&b[]=2&b[]=5
+
+		OR
+
+		GET Method with Associative Array:
+		http://localhost:8080/class/session03/SGA02.php?a=1&b[m]=2&b[n]=5
+
+Persistence Subject:
+	Variables (Server Side)
+	Cookies (Client Side)
+	Local Storage (HTML5 Standard)
+	Session (Server Side) --> File per User
+	File (Commonly Log File because Files is Slow & Sequential)
+	Database
+	Services
+	Shared Memory Option --> shmop
