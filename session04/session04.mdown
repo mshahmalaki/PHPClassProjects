@@ -63,7 +63,8 @@ Shopping Web Application File & Directory Structure:
 
 	|
 	---webroot
-	|
+	|	|
+	|	---admin
 	|
 	---view
 	|
