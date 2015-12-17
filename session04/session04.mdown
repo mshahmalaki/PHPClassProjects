@@ -118,3 +118,8 @@ Cookie:
 				setcookie ("TestCookie", "", time() - 3600);
 				setcookie ("TestCookie", "", time() - 3600, "/~rasmus/", "example.com", 1);
 			?> 
+
+	Note:
+		setcookie() defines a cookie to be sent along with the rest of the HTTP headers. Like other headers, cookies must be sent before any output from your script (this is a protocol restriction). This requires that you place calls to this function prior to any output, including <html> and <head> tags as well as any whitespace. 
+
+		Once the cookies have been set, they can be accessed on the next page load with the $_COOKIE array. Cookie values may also exist in $_REQUEST. 
