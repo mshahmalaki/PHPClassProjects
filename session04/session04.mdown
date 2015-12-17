@@ -161,11 +161,16 @@ Functions:
 			2
 			3
 
-	Global Keyword:
+	global Keyword:
 		Refer to "Variable scope" in PHP Manual.
 		Refer to "$GLOBALS" in PHP Manual.
 
-	Static Keyword:
+	static Keyword:
 		Refer to "Variable scope" in PHP Manual.
 		Refer to "Static Keyword" in PHP Manual.
 
+	return Keyword with include Function:
+		Refer to "include" in PHP Manual.
+
+	func_get_args() --> Array
+	func_num_args() --> Integer
