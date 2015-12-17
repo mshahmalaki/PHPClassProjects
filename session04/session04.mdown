@@ -160,3 +160,12 @@ Functions:
 			1
 			2
 			3
+
+	Global Keyword:
+		Refer to "Variable scope" in PHP Manual.
+		Refer to "$GLOBALS" in PHP Manual.
+
+	Static Keyword:
+		Refer to "Variable scope" in PHP Manual.
+		Refer to "Static Keyword" in PHP Manual.
+
