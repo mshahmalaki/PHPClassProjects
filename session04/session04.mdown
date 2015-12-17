@@ -123,3 +123,40 @@ Cookie:
 		setcookie() defines a cookie to be sent along with the rest of the HTTP headers. Like other headers, cookies must be sent before any output from your script (this is a protocol restriction). This requires that you place calls to this function prior to any output, including <html> and <head> tags as well as any whitespace. 
 
 		Once the cookies have been set, they can be accessed on the next page load with the $_COOKIE array. Cookie values may also exist in $_REQUEST. 
+
+Functions:
+	Our Code must be DRY (Don't Repeat Yourself)
+	Refer to "Function arguments" in PHP Manual.
+
+	for Parametric Function:
+		function sallary($data = array()){
+			$default[
+				'base' => 1000,
+				'bonus' => 0,
+				'penalty' => 0
+			];
+			$ad = array_merge($default, $data);
+		}
+
+	yield Keyword Usage in Functions: (Refer to "Generator syntax" in PHP Manual)
+		The heart of a generator function is the yield keyword. In its simplest form, a yield statement looks much like a return statement, except that instead of stopping execution of the function and returning, yield instead provides a value to the code looping over the generator and pauses execution of the generator function. 
+
+		Example #1 A simple example of yielding values:
+			<?php
+				function gen_one_to_three() {
+				    for ($i = 1; $i <= 3; $i++) {
+				        // Note that $i is preserved between yields.
+				        yield $i;
+				    }
+				}
+
+				$generator = gen_one_to_three();
+				foreach ($generator as $value) {
+				    echo "$value\n";
+				}
+			?> 
+
+		The above example will output:
+			1
+			2
+			3
