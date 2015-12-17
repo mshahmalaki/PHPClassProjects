@@ -1,0 +1,9 @@
+<?php 
+<h1><?php echo($product['name']); ?></h1>
+<?php if(!isset($product['sp_price'])): ?>
+	<div class="price"><?php echo($product['price']); ?></div>
+<?php else: ?>
+	<div>
+		<span class="old-price"><?php echo($prodcu['price']); ?></span>
+		<span calss="special-price"><?php echo($product['sp_price']); ?></span>
+	</div>

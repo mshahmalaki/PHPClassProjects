@@ -1,4 +1,54 @@
-require();
-require_once();
 include();
+	The include statement includes and evaluates the specified file. 
+	Example:
+		vars.php
+			<?php
+
+			$color = 'green';
+			$fruit = 'apple';
+
+			?>
+
+		test.php
+			<?php
+
+			echo "A $color $fruit"; // A
+
+			include 'vars.php';
+
+			echo "A $color $fruit"; // A green apple
+
+			?> 
+
 include_once();
+
+require();
+
+require_once();
+
+Note: Alternative Syntax for Use in phtml Files:
+	for Loop:	
+		for():
+			...
+		endfor;
+
+	foreach Loop:
+		foreach():
+			...
+		endforeach;
+
+	while Loop:
+		while():
+			...
+		endwhile;
+
+	if Condition:
+		if():
+			...
+		elseif():
+			...
+		elseif():
+			...
+		else:
+			...
+		endif;
