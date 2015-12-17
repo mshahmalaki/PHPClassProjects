@@ -88,3 +88,24 @@ Session:
 	for Use Session in Web Application you must Use
 		session_start();
 	in Begin of php File.
+
+Cookie:
+	$_COOKIE --> Array
+	bool setcookie(		// Send a cookie
+			string	$name,
+			string	$value,		|
+			int 	$expire,	|--> time() --> Elapsed Seconds from 01/Jan/1970  00:00:00 GMT
+			string 	$path,		|
+			string 	$domain,	|--> Optional
+			bool 	$secure,	|
+			bool	$httponly	|
+		)
+
+	Example #1 setcookie() send example
+		<?php
+			$value = 'something from somewhere';
+
+			setcookie("TestCookie", $value);
+			setcookie("TestCookie", $value, time()+3600);  /* expire in 1 hour */
+			setcookie("TestCookie", $value, time()+3600, "/~rasmus/", "example.com", 1);
+		?> 
