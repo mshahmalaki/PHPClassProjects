@@ -58,3 +58,23 @@ dirname(__DIR__);
 get_include_path();
 
 set_include_path(get_include_path().$newPath);
+
+Shopping Web Application File & Directory Structure:
+
+	|
+	---webroot
+	|
+	|
+	---view
+	|
+	|
+	---lib
+	|
+	|
+	---...
+	|
+	|
+	---config.php
+	|
+	|
+	---constant.php
