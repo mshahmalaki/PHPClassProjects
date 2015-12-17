@@ -174,3 +174,14 @@ Functions:
 
 	func_get_args() --> Array
 	func_num_args() --> Integer
+
+for Next Session (Session05):
+	mysql_connect();
+	mysql_error();
+	mysql_close();
+	mysql_insert_id();
+	mysql_num_rows();
+	mysql_query();
+	mysql_select_db();
+	mysql_set_charset();
+	mysql_free_result();
