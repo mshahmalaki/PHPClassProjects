@@ -52,3 +52,9 @@ Note: Alternative Syntax for Use in phtml Files:
 		else:
 			...
 		endif;
+
+dirname(__DIR__);
+
+get_include_path();
+
+set_include_path(get_include_path().$newPath);
