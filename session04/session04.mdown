@@ -82,3 +82,9 @@ Shopping Web Application File & Directory Structure:
 
 Github Address of Example Shopping Project:
 	https://github.com/ehsan2e/tahlildadeh-shop
+
+Session:
+	$_SESSION --> Array
+	for Use Session in Web Application you must Use
+		session_start();
+	in Begin of php File.
