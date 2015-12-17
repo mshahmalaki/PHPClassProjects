@@ -95,10 +95,10 @@ Cookie:
 			string	$name,
 			string	$value,		|
 			int 	$expire,	|--> time() --> Elapsed Seconds from 01/Jan/1970  00:00:00 GMT
-			string 	$path,		|
+			string 	$path,		|--> '/'
 			string 	$domain,	|--> Optional
-			bool 	$secure,	|
-			bool	$httponly	|
+			bool 	$secure,	|--> Default: false
+			bool	$httponly	|--> Default: false
 		)
 
 	Example #1 setcookie() send example
@@ -109,3 +109,12 @@ Cookie:
 			setcookie("TestCookie", $value, time()+3600);  /* expire in 1 hour */
 			setcookie("TestCookie", $value, time()+3600, "/~rasmus/", "example.com", 1);
 		?> 
+
+		Example #2 setcookie() delete example
+			When deleting a cookie you should assure that the expiration date is in the past, to trigger the removal mechanism in your browser. Examples follow how to delete cookies sent in previous example: 
+
+			<?php
+				// set the expiration date to one hour ago
+				setcookie ("TestCookie", "", time() - 3600);
+				setcookie ("TestCookie", "", time() - 3600, "/~rasmus/", "example.com", 1);
+			?> 
